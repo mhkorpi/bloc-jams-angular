@@ -1,11 +1,7 @@
 (function() {
 	function AlbumCtrl(Fixtures) {
 		this.albumData = Fixtures.getAlbum();
-		this.songs = [];
-		// create array of song objects for simpler access in HTML
-		for (var i = 0; i < this.albumData.songs.length; i++) {
-			this.songs.push(this.albumData.songs[i]);
-		}
+
 		this.filterTimeCode = function(timeInSeconds) {
     		var time = parseFloat(timeInSeconds);
     		var minutes = Math.floor(time / 60);
