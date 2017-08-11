@@ -2,6 +2,8 @@
 	function SongPlayer(){
 		var songPlayer = {};
 
+		var currentSong = null;
+
 		/**
 		* @desc Buzz object audio file
 		* @type {Object}
