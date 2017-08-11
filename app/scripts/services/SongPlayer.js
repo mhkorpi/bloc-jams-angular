@@ -2,8 +2,6 @@
 	function SongPlayer(){
 		var songPlayer = {};
 
-		var currentSong = null;
-
 		/**
 		* @desc Buzz object audio file
 		* @type {Object}
@@ -42,7 +40,6 @@
 		}
 
 		SongPlayer.play = function(song) {
-
 			if (currentSong !== song) {
 				setSong(song);
 				playSong(song);
@@ -58,7 +55,6 @@
 			currentBuzzObject.pause();
 			song.playing = false;
 			song.paused = true;
-
 		}
 
 		return SongPlayer;
