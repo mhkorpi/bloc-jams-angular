@@ -30,19 +30,26 @@
 			currentSong = song;
 		}
 
+		/**
+		* @function playSong
+		* @desc Plays audio from currentBuzzObject and updates playing/paused properties
+		* @param {Object} song
+		*/
+		var playSong = function(song) {
+			currentBuzzObject.play();
+			song.playing = true;
+			song.paused = false;
+		}
+
 		SongPlayer.play = function(song) {
 
 			if (currentSong !== song) {
 				setSong(song);
-				currentBuzzObject.play();
-				song.playing = true;
-				song.paused = false;
+				playSong(song);
 
 			} else if (currentSong === song) {
 				if (currentBuzzObject.isPaused()) {
-					currentBuzzObject.play();
-					song.playing = true;
-					song.paused = false;
+					playSong(song);
 				}
 			}
 		};
