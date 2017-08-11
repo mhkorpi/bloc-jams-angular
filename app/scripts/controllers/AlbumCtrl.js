@@ -1,6 +1,7 @@
 (function() {
-	function AlbumCtrl(Fixtures) {
+	function AlbumCtrl(Fixtures, SongPlayer) {
 		this.albumData = Fixtures.getAlbum();
+		this.songPlayer = SongPlayer;
 
 		this.filterTimeCode = function(timeInSeconds) {
     		var time = parseFloat(timeInSeconds);
@@ -17,5 +18,5 @@
 
 	angular
 		.module('blocJams') 
-		.controller('AlbumCtrl', ['Fixtures', AlbumCtrl]);
+		.controller('AlbumCtrl', ['Fixtures', 'SongPlayer', AlbumCtrl]);
 })();
