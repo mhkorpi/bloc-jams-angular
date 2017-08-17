@@ -31,6 +31,12 @@
 				$rootScope.$apply(function() {
 					SongPlayer.currentTime = currentBuzzObject.getTime();
 				});
+
+				// $rootScope.$apply(function() {
+				// 	if (SongPlayer.currentTime = currentBuzzObject.duration) {
+				// 		SongPlayer.next(song);
+				// 	}
+				// });
 			});
 
 			SongPlayer.currentSong = song;
@@ -150,7 +156,7 @@
 		* @function next
 		* @desc Stop play of current song and start play of next song
 		*/
-		SongPlayer.next = function() {
+		SongPlayer.next = function(song) {
 			var currentSongIndex = getSongIndex(SongPlayer.currentSong);
 			currentSongIndex++;
 
