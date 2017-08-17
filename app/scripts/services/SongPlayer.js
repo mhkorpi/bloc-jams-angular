@@ -30,13 +30,11 @@
 			currentBuzzObject.bind('timeupdate', function() {
 				$rootScope.$apply(function() {
 					SongPlayer.currentTime = currentBuzzObject.getTime();
+					if (SongPlayer.currentTime === parseFloat(SongPlayer.currentSong.duration)) {
+						SongPlayer.next(song);
+					}
+					console.log(SongPlayer.currentTime, parseFloat(SongPlayer.currentSong.duration));
 				});
-
-				// $rootScope.$apply(function() {
-				// 	if (SongPlayer.currentTime = currentBuzzObject.duration) {
-				// 		SongPlayer.next(song);
-				// 	}
-				// });
 			});
 
 			SongPlayer.currentSong = song;
@@ -166,6 +164,12 @@
 				var song = currentAlbum.songs[currentSongIndex];
 				setSong(song);
 				playSong(song);
+			}
+		};
+
+		SongPlayer.autoNext = function(song) {
+			if (SongPlayer.currentTime === currentBuzzObject.duration) {
+				SongPlayer.next(song);
 			}
 		};
 
