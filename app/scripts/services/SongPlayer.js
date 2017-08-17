@@ -32,7 +32,7 @@
 					SongPlayer.currentTime = currentBuzzObject.getTime();
 
 					if (SongPlayer.currentTime === parseFloat(SongPlayer.currentSong.duration)) {
-						SongPlayer.next(song)
+						setTimeout(SongPlayer.next, 1500);
 					}
 
 				});
