@@ -168,12 +168,6 @@
 			}
 		};
 
-		SongPlayer.autoNext = function(song) {
-			if (SongPlayer.currentTime === currentBuzzObject.duration) {
-				SongPlayer.next(song);
-			}
-		};
-
 		/**
 		* @function setCurrentTime
 		* @desc Set curren time (in seconds) of currently playing song
