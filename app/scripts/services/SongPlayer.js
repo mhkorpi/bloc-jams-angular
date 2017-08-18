@@ -34,6 +34,7 @@
 			});
 
 			SongPlayer.currentSong = song;
+			SongPlayer.setVolume(SongPlayer.volume);
 		};
 
 		/**
