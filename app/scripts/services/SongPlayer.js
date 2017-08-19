@@ -150,7 +150,7 @@
 		* @function next
 		* @desc Stop play of current song and start play of next song
 		*/
-		SongPlayer.next = function(song) {
+		SongPlayer.next = function() {
 			var currentSongIndex = getSongIndex(SongPlayer.currentSong);
 			currentSongIndex++;
 
@@ -160,12 +160,6 @@
 				var song = currentAlbum.songs[currentSongIndex];
 				setSong(song);
 				playSong(song);
-			}
-		};
-
-		SongPlayer.autoNext = function(song) {
-			if (SongPlayer.currentTime === currentBuzzObject.duration) {
-				SongPlayer.next(song);
 			}
 		};
 
